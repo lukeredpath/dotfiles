@@ -1,3 +1,3 @@
-export PATH=/opt/local/bin:/usr/local/bin:~/.bin:$PATH
+export PATH=$PATH:/usr/local/bin:/opt/local/bin:~/.bin
 export EDITOR='mate -w'
 source ~/.bash_aliases
