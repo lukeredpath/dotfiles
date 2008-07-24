@@ -1,3 +1,10 @@
 [user]
 	email = contact@lukeredpath.co.uk
 	name = Luke Redpath
+
+[alias]
+  ci = commit
+  ca = commit -a 
+  st = status
+  lc = log ORIG_HEAD.. --stat --no-merges
+  
