@@ -1,4 +1,3 @@
-export EDITOR='mate -w'
 export PS1="\w $ "
 
 if [ -d ~/.bin ]; then
@@ -12,3 +11,6 @@ fi
 if [ -f ~/.profile.local ]; then
   source ~/.profile.local
 fi
+
+export EDITOR='mate -w'
+export GIT_EDITOR="mate -w"

@@ -5,6 +5,8 @@
 [alias]
   ci = commit
   ca = commit -a 
+  co = checkout
+  cob = checkout -b
   st = status
   lc = log ORIG_HEAD.. --stat --no-merges
   co = checkout
