@@ -1,4 +1,8 @@
-export PS1="\w $ "
+if [ -f ~/.git-completion ]; then
+  source ~/.git-completion
+fi
+
+export PS1="\w\$(__git_ps1) $ "
 
 if [ -d ~/.bin ]; then
   export PATH=~/.bin:$PATH
