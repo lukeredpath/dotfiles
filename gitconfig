@@ -9,8 +9,6 @@
   cob = checkout -b
   st = status
   lc = log ORIG_HEAD.. --stat --no-merges
-  co = checkout
-  cob = checkout -b
   
 [color]
   branch = auto
