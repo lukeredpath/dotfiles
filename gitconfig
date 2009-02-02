@@ -9,6 +9,7 @@
   cob = checkout -b
   st = status
   lc = log ORIG_HEAD.. --stat --no-merges
+	rrb = push origin 
   
 [color]
   branch = auto
