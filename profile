@@ -2,6 +2,10 @@ if [ -f ~/.git-completion ]; then
   source ~/.git-completion
 fi
 
+if [ -f ~/.autojump ]; then
+  source ~/.autojump
+fi
+
 export PS1="\w\$(__git_ps1) $ "
 
 if [ -d ~/.bin ]; then
