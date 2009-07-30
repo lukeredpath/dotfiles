@@ -101,3 +101,7 @@ function prompt_func() {
 }
 
 PROMPT_COMMAND=prompt_func
+
+function gitrm() {
+  git st | grep 'deleted' | awk '{print $3}' | xargs git rm
+}
