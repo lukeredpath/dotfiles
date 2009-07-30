@@ -30,7 +30,7 @@ function set_window_and_tab_title
     local cmdfile="$tmpdir/$title"
 
     # Set window title
-    echo -n -e "\e]0;${title}\a"
+    echo -n -e "\033]0;${title}\a"
 
     # Set tab title
     if [[ -n ${CURRENT_TAB_TITLE_PID:+1} ]]; then
