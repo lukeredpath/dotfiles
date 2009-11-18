@@ -22,6 +22,7 @@ fi
 
 export EDITOR='mate -w'
 export GIT_EDITOR="mate -w"
+export RUBYOPT='rubygems'
 
 function set_window_and_tab_title
 {
@@ -93,9 +94,9 @@ function prompt_func() {
  prompt="${TITLEBAR}${LIGHT_GRAY}\W${YELLOW}$(parse_git_branch)${COLOR_NONE}"
  if test $previous_return_value -eq 0
  then
-   PS1="${GREEN}➜  ${COLOR_NONE}${prompt}${GREEN} \$${COLOR_NONE} "
+   PS1="${GREEN}➜ {\h} ${COLOR_NONE}${prompt}${GREEN} \$${COLOR_NONE} "
  else
-   PS1="${RED}➜  ${COLOR_NONE}${prompt}${RED} \$${COLOR_NONE} "
+   PS1="${RED}➜ {\h} ${COLOR_NONE}${prompt}${RED} \$${COLOR_NONE} "
  fi
  set_window_and_tab_title "${PWD##*/}"
 }
@@ -105,3 +106,12 @@ PROMPT_COMMAND=prompt_func
 function gitrm() {
   git st | grep 'deleted' | awk '{print $3}' | xargs git rm
 }
+
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
+# -- start rip config -- #
+RIPDIR=/Users/luke/.rip
+RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
+PATH="$PATH:$RIPDIR/active/bin"
+export RIPDIR RUBYLIB PATH
+# -- end rip config -- #
