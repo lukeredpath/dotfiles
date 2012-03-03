@@ -39,4 +39,4 @@ export PGDATA='/usr/local/var/postgres/'
 
 # rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
