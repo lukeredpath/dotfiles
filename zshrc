@@ -32,10 +32,14 @@ ZSH_THEME="lukeredpath"
 plugins=(rake git brew bundler github pow rails3 textmate osx)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.aliases.zsh
 
 # Customize to your needs...
 export PATH=~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PGDATA='/usr/local/var/postgres/'
+export EDITOR='mate -w'
+export JAVA_HOME=`/usr/libexec/java_home | tail -1`
+export M2_HOME=/usr/local/Cellar/maven/3.0.4/libexec
 
 # rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
