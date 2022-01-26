@@ -38,7 +38,7 @@ UNBUNDLED_COMMANDS=(rake)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler rails osx)
+plugins=(git brew bundler rails macos)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
@@ -54,17 +54,6 @@ export EDITOR='vim'
 # rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
-# go workspace setup
-export GOPATH="$HOME/Code/go-workspace"
-export PATH="$GOPATH/bin:$PATH"
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Initialise starship
-eval "$(starship init zsh)"
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
 # Local configuration (not stored in version control)
 source ~/.zshrc.local
