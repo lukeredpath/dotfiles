@@ -1,17 +1,45 @@
-[user]
-	email = contact@lukeredpath.co.uk
-	name = Luke Redpath
+[include]
+  path = ~/.gitconfig.local
 
 [alias]
   ci = commit
-  ca = commit -a 
+  ca = commit -a
   co = checkout
   cob = checkout -b
   st = status
   lc = log ORIG_HEAD.. --stat --no-merges
-	rrb = push origin 
-  
+	rrb = push origin
+	track = checkout -t
+  rbc = rebase --continue
+  show-merges-remote = !git log --first-parent --merges --pretty=\"%h %Cblue %<(16) %ar %Cgreen %<(16) %an %Cred %b\" origin/master..origin/develop
+  show-merges = !git log --first-parent --merges --pretty=\"%h %Cblue %<(16) %ar %Cgreen %<(16) %an %Cred %b\" master..develop
+  tpush = push
+  tpull = pull
+
 [color]
   branch = auto
   diff = true
   status = true
+
+[core]
+	quotepath = false
+	excludesfile = ~/.gitignore
+[push]
+	default = upstream
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pager]
+	branch = cat
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+
+[diff "localizablestrings"]
+	textconv = "iconv -f utf-16le -t utf-8"
+	binary = false
