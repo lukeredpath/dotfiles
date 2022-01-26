@@ -51,9 +51,5 @@ export PATH=~/.bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/l
 export PGDATA='/usr/local/var/postgres/'
 export EDITOR='vim'
 
-# rbenv setup
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Local configuration (not stored in version control)
 source ~/.zshrc.local
