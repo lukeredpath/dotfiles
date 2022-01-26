@@ -26,21 +26,39 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+BUNDLED_COMMANDS=(pod)
+UNBUNDLED_COMMANDS=(rake)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rake git brew bundler github pow rails3 textmate osx)
+plugins=(git brew bundler rails osx)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
 
+# disable auto correct
+unsetopt correct_all
+
 # Customize to your needs...
-export PATH=~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=~/.bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PGDATA='/usr/local/var/postgres/'
-export EDITOR='mate -w'
-export JAVA_HOME=`/usr/libexec/java_home | tail -1`
-export M2_HOME=/usr/local/Cellar/maven/3.0.4/libexec
+export EDITOR='vim'
 
 # rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# go workspace setup
+export GOPATH="$HOME/Code/go-workspace"
+export PATH="$GOPATH/bin:$PATH"
+
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Initialise starship
+eval "$(starship init zsh)"
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+
+# Local configuration (not stored in version control)
+source ~/.zshrc.local

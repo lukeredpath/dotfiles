@@ -1,8 +1,6 @@
 ####################
 # COMMON REQUIRES
 ####################
-require 'rubygems'
-require 'awesome_print'
 
 require 'irb/completion'
 require 'irb/ext/save-history'
@@ -14,7 +12,6 @@ require 'irb/ext/save-history'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
-
 
 alias q exit
 
@@ -67,6 +64,7 @@ $console_extensions = []
 # Wirble is a gem that handles coloring the IRB
 # output and history
 extend_console 'wirble' do
+  require 'wirble'
   Wirble.init
   Wirble.colorize
 end
@@ -77,6 +75,7 @@ end
 
 # awesome_print is prints prettier than pretty_print
 extend_console 'ap' do
+  require 'awesome_print'
   alias pp ap
 end
 
