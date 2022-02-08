@@ -1,0 +1,8 @@
+[aws]
+disabled = true
+
+[ruby]
+detect_files = [".ruby-version"]
+
+[git_branch]
+style = "bold yellow"
