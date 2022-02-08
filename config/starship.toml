@@ -6,3 +6,6 @@ detect_files = [".ruby-version"]
 
 [git_branch]
 style = "bold yellow"
+
+[git_commit]
+only_detached = false
