@@ -43,3 +43,5 @@
 [diff "localizablestrings"]
 	textconv = "iconv -f utf-16le -t utf-8"
 	binary = false
+[gc]
+	auto = 0
